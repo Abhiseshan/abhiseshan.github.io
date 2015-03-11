@@ -1,9 +1,6 @@
 function command(){
     var output = '';
-	
-	var intro = 'ZTerm version 1.0.0 designed by Abhinav Rajaseshan. <BR>(c) 2015 Abhinav Rajaseshan. All rights reserved. <BR>Type help for list of commands. <BR>'
-	document.getElementById('output').innerHTML = document.getElementById('output').innerHTML + intro;
-	
+
 	todo = getinput();
 
     if(todo == 'clear'){
@@ -35,39 +32,34 @@ function command(){
     }
 	
 	else if(todo =='skills'){
-		output = 'None :(';
+		output = 'None :( <BR>';
+	}
+	
+	else if(todo == 'fuck you'){
+		output= 'fuck you too <BR>';
 	}
 	
 	else if(todo =='login'){
-		var auth = login();
-		if (auth == 1) output = 'Success';
-		else output = 'Failed';
+		output = 'No users found <BR>';
 	}
 	
 	else if(todo == 'name'){
-		output = 'root <BR>'
+		output = 'root <BR>';
 	}
 	
+	else if(todo == 'su'){
+		output = 'No root access <BR>';
+	}
+	 
+	else if(todo == 'info'){
+		output = '------------------<BR>|                 |<BR>|                 |<BR>-----------/      /<BR>          /      /<BR>         /      /<BR>        /      /<BR>       /      /<BR>      /      /<BR>     /      /<BR>    /      /<BR>   /      /<BR>  /      /<BR> /      /<BR>/      /-----------<BR>|                 |<BR>|                 |<BR>-------------------<BR>';
+	}
+	 
 	else if(todo.length > 0){
         output = 'Unrecognized command. Type <b>help</b> for a list of commands.<BR>';
     }
 
-	//output = output + '<BR>abhiseshan.me&bsol;term> ';
-	//output = output + '<BR>abhiseshan.me&	bsol;term> ';
-    document.getElementById('output').innerHTML = document.getElementById('output').innerHTML + output;
-}
-
-function login()
-{
-	document.getElementById('output').innerHTML = document.getElementById('output').innerHTML + 'User Name: ';
-	setTimeout(loop, 0);
-	var uname = getinput();
-	setTimeout(loop, 0);
-	document.getElementById('output').innerHTML = document.getElementById('output').innerHTML + '3' + uname + '3' + '<BR>Password: ';
-	var pass = getinput();
-	//if (uname == 'root' && pass = 'toor') return 1;
-	//else return 0;
-	return 0;
+    document.getElementById('output').innerHTML = document.getElementById('output').innerHTML + '> ' + 	todo + '<BR>'+ output;
 }
 
 function getinput()
@@ -84,7 +76,7 @@ function two_digits(value){
     return value;
 }
 
-document.getElementById('input').focus();
+//document.getElementById('input').focus();
 
 window.onkeydown = function(e){
     var key = e.keyCode || e.which;
@@ -92,4 +84,5 @@ window.onkeydown = function(e){
     if(key === 13){
         command();
     }
+	
 };
