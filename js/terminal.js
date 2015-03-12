@@ -53,32 +53,7 @@ function command(){
 	 
 	else if(todo == 'info'){
 		output = '------------------<BR>|                 |<BR>|                 |<BR>-----------/      /<BR>          /      /<BR>         /      /<BR>        /      /<BR>       /      /<BR>      /      /<BR>     /      /<BR>    /      /<BR>   /      /<BR>  /      /<BR> /      /<BR>/      /-----------<BR>|                 |<BR>|                 |<BR>-------------------<BR>';
-	}
-	 
-	else if(todo == 'yo mama'){
-		$.getJSON("http://api.yomomma.info/", function(json) {
-		alert("JSON Data: " + json.name);
-		});
-	}
-	
-	else if(todo == 'try'){
-		var request = new XMLHttpRequest();
-		request.onload = function() {
-			// get the file contents
-			var fileContent = this.responseText;
-			// split into lines
-			var fileContentLines = fileContent.split( '\n' );
-			// get a random index (line number)
-			var randomLineIndex = Math.floor( Math.random() * fileContentLines.length );
-			// extract the value
-			var randomLine = fileContentLines[ randomLineIndex ];
-
-			// add the random line in a div
-			output = randomLine;
-		};
-		request.open( 'GET', 'jokes.txt', true );
-		request.send();
-	}
+	} 
 	
 	else if(todo.length > 0){
         output = 'Unrecognized command. Type <b>help</b> for a list of commands.<BR>';
