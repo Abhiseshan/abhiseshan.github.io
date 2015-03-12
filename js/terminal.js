@@ -61,6 +61,25 @@ function command(){
 		});
 	}
 	
+	else if(todo == 'try'){
+		var request = new XMLHttpRequest();
+		request.onload = function() {
+			// get the file contents
+			var fileContent = this.responseText;
+			// split into lines
+			var fileContentLines = fileContent.split( '\n' );
+			// get a random index (line number)
+			var randomLineIndex = Math.floor( Math.random() * fileContentLines.length );
+			// extract the value
+			var randomLine = fileContentLines[ randomLineIndex ];
+
+			// add the random line in a div
+			output = randomLine;
+		};
+		request.open( 'GET', 'jokes.txt', true );
+		request.send();
+	}
+	
 	else if(todo.length > 0){
         output = 'Unrecognized command. Type <b>help</b> for a list of commands.<BR>';
     }
@@ -81,21 +100,6 @@ function two_digits(value){
         value = '0' + value;
     }
     return value;
-}
-
-function get_json(url, callback) {
-    http.get(url, function(res) {
-        var body = '';
-        res.on('data', function(chunk) {
-            body += chunk;
-        });
-
-        res.on('end', function() {
-            var response = JSON.parse(body);
-// call function ----v
-            callback(response);
-        });
-    });
 }
 
 //document.getElementById('input').focus();
