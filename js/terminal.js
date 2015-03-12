@@ -52,8 +52,20 @@ function command(){
 	}
 	 
 	else if(todo == 'info'){
-		output = '------------------<BR>|                 |<BR>|                 |<BR>-----------/      /<BR>          /      /<BR>         /      /<BR>        /      /<BR>       /      /<BR>      /      /<BR>     /      /<BR>    /      /<BR>   /      /<BR>  /      /<BR> /      /<BR>/      /-----------<BR>|                 |<BR>|                 |<BR>-------------------<BR>';
+		output = '------------------<BR>fi|                 |<BR>|                 |<BR>-----------/      /<BR>          /      /<BR>         /      /<BR>        /      /<BR>       /      /<BR>      /      /<BR>     /      /<BR>    /      /<BR>   /      /<BR>  /      /<BR> /      /<BR>/      /-----------<BR>|                 |<BR>|                 |<BR>-------------------<BR>';
 	} 
+	
+	else if(todo == 'uoft'){
+		output = 'kill me';
+	}
+	
+	else if(todo == 'engineering'){
+		output = 'no time to sleep';
+	}
+	
+	else if(todo == 'field of study'){
+		output = 'computer engineering';
+	}
 	
 	else if(todo.length > 0){
         output = 'Unrecognized command. Type <b>help</b> for a list of commands.<BR>';
