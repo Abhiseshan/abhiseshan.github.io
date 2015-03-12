@@ -55,9 +55,16 @@ function command(){
 		output = '------------------<BR>|                 |<BR>|                 |<BR>-----------/      /<BR>          /      /<BR>         /      /<BR>        /      /<BR>       /      /<BR>      /      /<BR>     /      /<BR>    /      /<BR>   /      /<BR>  /      /<BR> /      /<BR>/      /-----------<BR>|                 |<BR>|                 |<BR>-------------------<BR>';
 	}
 	 
+	else if(todo == 'yo mama'){
+		$.getJSON("http://api.yomomma.info/", function(json) {
+		alert("JSON Data: " + json.name);
+		});
+	}
+	
 	else if(todo.length > 0){
         output = 'Unrecognized command. Type <b>help</b> for a list of commands.<BR>';
     }
+	
 
     document.getElementById('output').innerHTML = document.getElementById('output').innerHTML + '> ' + 	todo + '<BR>'+ output;
 }
@@ -74,6 +81,21 @@ function two_digits(value){
         value = '0' + value;
     }
     return value;
+}
+
+function get_json(url, callback) {
+    http.get(url, function(res) {
+        var body = '';
+        res.on('data', function(chunk) {
+            body += chunk;
+        });
+
+        res.on('end', function() {
+            var response = JSON.parse(body);
+// call function ----v
+            callback(response);
+        });
+    });
 }
 
 //document.getElementById('input').focus();
