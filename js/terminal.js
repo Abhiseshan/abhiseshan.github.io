@@ -10,9 +10,10 @@ function command(){
 
     // Display list of commands.
     if(todo === 'help'){
-        output = 'Terminal-Mockup.htm commands:'
+        output = 'Commands:'
           + '<pre><b>clear</b>.....Clears entire terminal content.<br>'
           + '<b>help</b>......Lists available commands. You are here!<br>'
+		  + '<b>skills</b>......Lists my skills!<br>'
           + '<b>time</b>......Display time in local timezone.</pre>'
           + '<BR>';
 

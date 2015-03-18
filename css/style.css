@@ -233,11 +233,14 @@ blockquote {
 	z-index: 3;
 	position: relative;
 }
-.bg-image-1 {
-	background: url("../images/bg-image-1.jpg") 50% 0px no-repeat;
+.bg-image-term {
+	background: url("../images/term-bg.jpg") 50% 0px no-repeat;
 }
-.bg-image-2 {
-	background: url("../images/bg-image-2.jpg") 50% 0px no-repeat;
+.bg-image-awards {
+	background: url("../images/awards-bg.jpg") 50% 0px no-repeat;
+}
+.bg-image-skills {
+	background: url("../images/skills-bg.jpg") 50% 0px no-repeat;
 }
 
 /* Misc
