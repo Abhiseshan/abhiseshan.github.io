@@ -918,6 +918,10 @@ a {
   color: #428bca;
   text-decoration: none;
 }
+
+p{
+  color: #000000;
+}
 a:hover,
 a:focus {
   color: #2a6496;
