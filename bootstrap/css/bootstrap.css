@@ -991,6 +991,10 @@ hr {
   overflow: visible;
   clip: auto;
 }
+
+.white {
+  color: white;
+}
 h1,
 h2,
 h3,
